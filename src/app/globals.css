@@ -616,6 +616,11 @@ button {
   margin-bottom: 16px;
 }
 
+.enquiry-sent--error {
+  border-color: #101010;
+  background: rgba(16, 16, 16, 0.12);
+}
+
 .enquiry-form {
   display: grid;
   gap: 10px;
@@ -665,6 +670,11 @@ button {
 
 .enquiry-submit:hover {
   background: #000;
+}
+
+.enquiry-submit:disabled {
+  opacity: 0.6;
+  cursor: default;
 }
 
 .enquiry-note {

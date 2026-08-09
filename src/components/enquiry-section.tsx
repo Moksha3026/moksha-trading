@@ -15,9 +15,11 @@ const initialForm = {
   method: METHOD_OPTIONS[0],
 };
 
+type Status = "idle" | "submitting" | "sent" | "error";
+
 export function EnquirySection() {
   const [form, setForm] = useState(initialForm);
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<Status>("idle");
 
   const field =
     (key: keyof typeof initialForm) =>
@@ -28,33 +30,24 @@ export function EnquirySection() {
     ) =>
       setForm((prev) => ({ ...prev, [key]: e.target.value }));
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    const body = [
-      "Name: " + form.name,
-      "Company: " + form.company,
-      "Email: " + form.email,
-      "WhatsApp: " + form.phone,
-      "Product: " + form.product,
-      "Print method: " + form.method,
-      "Quantity: " + form.qty,
-      "Delivery country: " + form.country,
-      "",
-      "Notes:",
-      form.notes,
-    ].join("\n");
+    setStatus("submitting");
 
-    window.location.href =
-      "mailto:" +
-      CONTACT.email +
-      "?subject=" +
-      encodeURIComponent(
-        "Quote enquiry — " + (form.company || form.name || "New enquiry"),
-      ) +
-      "&body=" +
-      encodeURIComponent(body);
+    try {
+      const res = await fetch("/api/enquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
 
-    setSent(true);
+      if (!res.ok) throw new Error("Request failed");
+
+      setStatus("sent");
+      setForm(initialForm);
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -91,9 +84,15 @@ export function EnquirySection() {
         </div>
       </div>
       <div className="enquiry-form-col">
-        {sent && (
+        {status === "sent" && (
           <div className="enquiry-sent">
-            Your email draft is open. If nothing appeared, write to{" "}
+            Thanks — your enquiry has been sent. We&apos;ll get back to you
+            shortly.
+          </div>
+        )}
+        {status === "error" && (
+          <div className="enquiry-sent enquiry-sent--error">
+            Something went wrong sending that. Please try again, or email{" "}
             <strong>{CONTACT.email}</strong> directly.
           </div>
         )}
@@ -103,6 +102,7 @@ export function EnquirySection() {
               value={form.name}
               onChange={field("name")}
               placeholder="Name"
+              required
             />
             <input
               value={form.company}
@@ -116,6 +116,7 @@ export function EnquirySection() {
               onChange={field("email")}
               placeholder="Email"
               type="email"
+              required
             />
             <input
               value={form.phone}
@@ -152,8 +153,12 @@ export function EnquirySection() {
             onChange={field("notes")}
             placeholder="Artwork notes, fabric, deadline"
           />
-          <button type="submit" className="enquiry-submit">
-            SEND ENQUIRY
+          <button
+            type="submit"
+            className="enquiry-submit"
+            disabled={status === "submitting"}
+          >
+            {status === "submitting" ? "SENDING…" : "SEND ENQUIRY"}
           </button>
           <div className="enquiry-note">
             ARTWORK KEPT CONFIDENTIAL · NDA ON REQUEST
