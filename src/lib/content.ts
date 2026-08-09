@@ -1,0 +1,162 @@
+export const NAV_LINKS = [
+  { href: "#products", label: "Products" },
+  { href: "#printing", label: "Printing" },
+  { href: "#process", label: "How it works" },
+  { href: "#exports", label: "Exports" },
+  { href: "#about", label: "About" },
+  { href: "#faq", label: "FAQ" },
+];
+
+export const CREDENTIALS = [
+  "GSTIN 24DINPK3588M2ZH",
+  "IEC EXPORT LICENSE",
+  "5,000+ TEES EXPORTED",
+  "NO MINIMUM ORDER",
+  "QC BEFORE DISPATCH",
+];
+
+export const PRINTING_METHODS = [
+  {
+    name: "Screen",
+    desc: "Multi-colour plastisol & water-based inks. Our best unit cost once volumes get serious.",
+    photoSrc: "/images/printing-screen.jpg",
+    photoAlt: "Screen printing a design onto fabric by hand",
+  },
+  {
+    name: "DTF",
+    desc: "Full colour on any fabric or garment shade. Mixed batches and one-off pieces welcome.",
+    photoSrc: "/images/printing-dtf.jpg",
+    photoAlt: "Heat-press applying a DTF transfer to a garment",
+  },
+  {
+    name: "Digital",
+    desc: "DTG photographic detail with a soft hand feel. Built for POD and e-commerce sellers.",
+    photoSrc: "/images/printing-digital.jpg",
+    photoAlt: "Digital printer applying artwork directly onto fabric",
+  },
+  {
+    name: "HD",
+    desc: "Raised, high-opacity finish for premium retail labels, sports names and numbers.",
+    photoSrc: "/images/printing-hd.jpg",
+    photoAlt: "Close-up of a print being applied to a t-shirt in a workshop",
+  },
+];
+
+export const PRODUCTS = [
+  {
+    photoSrc: "/images/product-cotton-tee.jpg",
+    photoAlt: "Plain white cotton T-shirt",
+    title: "Cotton T-shirts",
+    meta: ["COMBED / BIO-WASH", "ROUND & POLO NECK"],
+  },
+  {
+    photoSrc: "/images/product-sports-tee.jpg",
+    photoAlt: "Close-up of white performance mesh fabric",
+    title: "Sports T-shirts",
+    meta: ["DRY-FIT POLYESTER", "TEAM KITS"],
+  },
+  {
+    photoSrc: "/images/product-jeans.jpg",
+    photoAlt: "Close-up of blue denim jeans with buttons",
+    title: "Jeans",
+    meta: ["DENIM", "CUSTOM WASHES"],
+  },
+  {
+    photoSrc: "/images/product-pants.jpg",
+    photoAlt: "Close-up of beige woven twill fabric",
+    title: "Pants & trousers",
+    meta: ["TWILL / CARGO", "JOGGERS"],
+  },
+  {
+    photoSrc: "/images/product-shirts.jpg",
+    photoAlt: "Close-up of a white dress shirt with buttons",
+    title: "Shirts & uniforms",
+    meta: ["CORPORATE", "EVENT MERCH"],
+  },
+];
+
+export const PROCESS_STEPS = [
+  {
+    label: "STEP 01",
+    title: "Share your spec",
+    desc: "Garment, fabric, quantity, artwork and destination. One message is enough.",
+  },
+  {
+    label: "STEP 02",
+    title: "Quote & method",
+    desc: "We match your order to the right unit in our network and quote the method that fits.",
+  },
+  {
+    label: "STEP 03",
+    title: "Sample approval",
+    desc: "Physical or photo sample sent to you and signed off before bulk starts.",
+  },
+  {
+    label: "STEP 04",
+    title: "We supervise & check",
+    desc: "We follow the run and inspect stitch, print and measurement before it leaves.",
+  },
+  {
+    label: "STEP 05",
+    title: "Export & dispatch",
+    desc: "Documentation, packing list and freight coordinated by us, to your door.",
+  },
+];
+
+export const EXPORT_FACTS = [
+  { label: "GSTIN", value: "24DINPK3588M2ZH" },
+  { label: "IMPORT / EXPORT CODE", value: "Licensed for garments" },
+  { label: "DOCUMENTATION", value: "Invoice, packing list, HS coding" },
+  { label: "FREIGHT", value: "Air & sea, coordinated by us" },
+];
+
+export const FAQS = [
+  {
+    q: "Do you really have no minimum order quantity?",
+    a: "Correct. We place your order with the unit in our network that suits it, so a single sample and a full bulk run go through the same process. Unit price improves with volume.",
+  },
+  {
+    q: "Which print method suits my artwork?",
+    a: "Send the artwork and the garment you have in mind — we'll recommend screen, DTF, digital or HD based on colour count, fabric and quantity, and explain the cost difference before you commit.",
+  },
+  {
+    q: "Do you manufacture yourself?",
+    a: "No — we are a trading firm with direct relationships with manufacturers. That lets us pick the right unit for each order instead of forcing every job through one factory. You deal only with us: sourcing, sampling, QC, export paperwork and delivery.",
+  },
+  {
+    q: "Can you produce under my own brand label?",
+    a: "Yes. Woven or printed labels, neck prints, hang tags and custom packaging can all be applied to your spec.",
+  },
+  {
+    q: "Do you ship internationally?",
+    a: "Yes. We hold an Import/Export licence for garments and have already delivered 5,000+ T-shirts to international buyers. Documentation and freight are handled by us, door to door.",
+  },
+  {
+    q: "How do I start?",
+    a: "Send your spec through the enquiry form or email Mokshatrading30@gmail.com with garment, quantity, artwork and destination country.",
+  },
+];
+
+export const PRODUCT_OPTIONS = [
+  "Cotton T-shirts",
+  "Sports T-shirts",
+  "Jeans",
+  "Pants & trousers",
+  "Shirts & uniforms",
+  "Other / mixed",
+];
+
+export const METHOD_OPTIONS = [
+  "Not sure — advise me",
+  "Screen printing",
+  "DTF",
+  "Digital / DTG",
+  "HD printing",
+];
+
+export const CONTACT = {
+  email: "Mokshatrading30@gmail.com",
+  location: "Ahmedabad, Gujarat, India",
+  phoneDisplay: "+91 79903 02150",
+  whatsappHref: "https://wa.me/917990302150",
+};
