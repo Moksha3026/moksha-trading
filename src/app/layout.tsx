@@ -18,10 +18,27 @@ const notoSansGujarati = Noto_Sans_Gujarati({
   subsets: ["gujarati"],
 });
 
+const title = "Moksha Trading — Garment Sourcing, Printing & Export";
+const description =
+  "GST-registered, IEC-licensed garment sourcing, printing and export from Ahmedabad, Gujarat. Cotton and sports T-shirts, jeans, pants and shirts — no minimum order quantity.";
+
 export const metadata: Metadata = {
-  title: "Moksha Trading — Garment Sourcing, Printing & Export",
-  description:
-    "GST-registered, IEC-licensed garment sourcing, printing and export from Ahmedabad, Gujarat. Cotton and sports T-shirts, jeans, pants and shirts — no minimum order quantity.",
+  metadataBase: new URL("https://moksha-trading.vercel.app"),
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    url: "/",
+    siteName: "Moksha Trading",
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+  },
 };
 
 export default function RootLayout({
