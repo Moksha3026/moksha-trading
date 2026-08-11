@@ -1,19 +1,28 @@
 import { PROCESS_STEPS } from "@/lib/content";
+import { Reveal } from "@/components/reveal";
 
 export function ProcessSection() {
   return (
     <section id="process" className="section">
-      <div className="section-head">
-        <h2>03 / HOW IT WORKS — ONE POINT OF CONTACT</h2>
-      </div>
-      <div className="process-grid">
-        {PROCESS_STEPS.map((step) => (
-          <div className="process-step" key={step.label}>
-            <div className="step-label">{step.label}</div>
-            <div className="step-title">{step.title}</div>
-            <div className="step-desc">{step.desc}</div>
+      <div className="container">
+        <Reveal>
+          <div className="section-head">
+            <span className="kicker">How it works</span>
+            <h2 className="section-title">One point of contact.</h2>
           </div>
-        ))}
+        </Reveal>
+
+        <div className="process-list">
+          {PROCESS_STEPS.map((step, i) => (
+            <Reveal key={step.label} delay={i * 60}>
+              <div className="process-row">
+                <div className="num">0{i + 1}</div>
+                <div className="title">{step.title}</div>
+                <div className="desc">{step.desc}</div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -11,7 +11,7 @@ import { SiteHeader } from "@/components/site-header";
 
 export default function Home() {
   return (
-    <div className="shell">
+    <>
       <SiteHeader />
       <Hero />
       <CredentialStrip />
@@ -22,6 +22,6 @@ export default function Home() {
       <ExportsFaqSection />
       <EnquirySection />
       <SiteFooter />
-    </div>
+    </>
   );
 }

@@ -1,40 +1,45 @@
 import Image from "next/image";
 import { PRODUCTS } from "@/lib/content";
+import { Reveal } from "@/components/reveal";
 
 export function ProductsSection() {
   return (
-    <section id="products" className="section">
-      <div className="section-head">
-        <h2>02 / PRODUCT RANGE</h2>
-        <span className="section-head-note">
-          YOUR SPEC · YOUR LABEL · YOUR PACKAGING
-        </span>
-      </div>
-      <div className="products-grid">
-        {PRODUCTS.map((product) => (
-          <div className="product-card" key={product.title}>
-            <div className="photo-frame">
-              <Image
-                src={product.photoSrc}
-                alt={product.photoAlt}
-                fill
-                sizes="(max-width: 900px) 50vw, 20vw"
-                style={{ objectFit: "cover" }}
-              />
-            </div>
-            <div className="body">
-              <div className="title">{product.title}</div>
-              <div className="meta">
-                {product.meta.map((line, i) => (
-                  <span key={line}>
-                    {line}
-                    {i < product.meta.length - 1 && <br />}
-                  </span>
-                ))}
-              </div>
+    <section id="products" className="section section-alt">
+      <div className="container">
+        <Reveal>
+          <div className="section-head">
+            <span className="kicker">Product range</span>
+            <div className="section-title-row">
+              <h2 className="section-title">Your spec. Your label.</h2>
+              <p className="section-note">
+                Cotton and sports T-shirts, jeans, pants and shirts — sample
+                or bulk, no minimum order quantity.
+              </p>
             </div>
           </div>
-        ))}
+        </Reveal>
+
+        <div className="products-grid">
+          {PRODUCTS.map((product, i) => (
+            <Reveal key={product.title} delay={i * 70}>
+              <div className="product-card">
+                <div className="photo-frame">
+                  <Image
+                    src={product.photoSrc}
+                    alt={product.photoAlt}
+                    fill
+                    sizes="(max-width: 900px) 50vw, 20vw"
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
+                <div className="body">
+                  <div className="title">{product.title}</div>
+                  <div className="meta">{product.meta.join(" · ")}</div>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );

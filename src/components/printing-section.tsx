@@ -1,32 +1,46 @@
 import Image from "next/image";
 import { PRINTING_METHODS } from "@/lib/content";
+import { Reveal } from "@/components/reveal";
 
 export function PrintingSection() {
   return (
     <section id="printing" className="section">
-      <div className="section-head">
-        <h2>01 / PRINTING WE ARRANGE</h2>
-        <span className="section-head-gu">પ્રિન્ટિંગ સુવિધાઓ</span>
+      <div className="container">
+        <Reveal>
+          <div className="section-head">
+            <span className="kicker">Printing we arrange</span>
+            <div className="section-title-row">
+              <h2 className="section-title">
+                Four ways to put your artwork on cloth.
+              </h2>
+              <p className="section-note">
+                Our print specialists advise the method before you commit —
+                so the cost, hand feel and wash life match what you&apos;re
+                selling.
+              </p>
+            </div>
+          </div>
+        </Reveal>
       </div>
+
       <div className="printing-grid">
-        {PRINTING_METHODS.map((method) => (
-          <div className="printing-card" key={method.name}>
-            <div className="name">{method.name}</div>
-            <div className="desc">{method.desc}</div>
-          </div>
-        ))}
-      </div>
-      <div className="printing-photos">
-        {PRINTING_METHODS.map((method) => (
-          <div className="photo-frame" key={method.name}>
-            <Image
-              src={method.photoSrc}
-              alt={method.photoAlt}
-              fill
-              sizes="(max-width: 900px) 50vw, 25vw"
-              style={{ objectFit: "cover" }}
-            />
-          </div>
+        {PRINTING_METHODS.map((method, i) => (
+          <Reveal key={method.name} delay={i * 80}>
+            <div className="printing-card">
+              <div className="photo-frame">
+                <Image
+                  src={method.photoSrc}
+                  alt={method.photoAlt}
+                  fill
+                  sizes="(max-width: 900px) 50vw, 25vw"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+              <div className="index">0{i + 1}</div>
+              <div className="name">{method.name}</div>
+              <div className="desc">{method.desc}</div>
+            </div>
+          </Reveal>
         ))}
       </div>
     </section>
