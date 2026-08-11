@@ -8,7 +8,6 @@ export const NAV_LINKS = [
 ];
 
 export const CREDENTIALS = [
-  "GSTIN 24DINPK3588M2ZH",
   "IEC EXPORT LICENSE",
   "5,000+ TEES EXPORTED",
   "NO MINIMUM ORDER",
@@ -104,7 +103,6 @@ export const PROCESS_STEPS = [
 ];
 
 export const EXPORT_FACTS = [
-  { label: "GSTIN", value: "24DINPK3588M2ZH" },
   { label: "IMPORT / EXPORT CODE", value: "Licensed for garments" },
   { label: "DOCUMENTATION", value: "Invoice, packing list, HS coding" },
   { label: "FREIGHT", value: "Air & sea, coordinated by us" },
