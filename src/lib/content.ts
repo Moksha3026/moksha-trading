@@ -1,3 +1,5 @@
+export const SITE_URL = "https://www.mokshaexport.com";
+
 export const NAV_LINKS = [
   { href: "#products", label: "Products" },
   { href: "#printing", label: "Printing" },

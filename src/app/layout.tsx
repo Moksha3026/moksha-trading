@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Archivo } from "next/font/google";
+import { SITE_URL } from "@/lib/content";
 import "./globals.css";
 
 const archivo = Archivo({
@@ -12,9 +13,12 @@ const description =
   "GST-registered, IEC-licensed garment sourcing, printing and export from Ahmedabad, Gujarat. Cotton and sports T-shirts, jeans, pants and shirts — no minimum order quantity.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://moksha-trading.vercel.app"),
+  metadataBase: new URL(SITE_URL),
   title,
   description,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title,
     description,
