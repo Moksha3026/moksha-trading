@@ -52,7 +52,7 @@ export function EnquirySection() {
   };
 
   return (
-    <section id="enquiry" className="section enquiry-section">
+    <section id="enquiry" className="section enquiry-section grain">
       <div className="container">
         <div className="enquiry-grid">
           <Reveal>

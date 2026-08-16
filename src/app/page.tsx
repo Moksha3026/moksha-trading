@@ -3,6 +3,7 @@ import { CredentialStrip } from "@/components/credential-strip";
 import { EnquirySection } from "@/components/enquiry-section";
 import { ExportsFaqSection } from "@/components/exports-faq-section";
 import { Hero } from "@/components/hero";
+import { MobileCtaBar } from "@/components/mobile-cta-bar";
 import { PrintingSection } from "@/components/printing-section";
 import { ProcessSection } from "@/components/process-section";
 import { ProductsSection } from "@/components/products-section";
@@ -22,6 +23,7 @@ export default function Home() {
       <ExportsFaqSection />
       <EnquirySection />
       <SiteFooter />
+      <MobileCtaBar />
     </>
   );
 }

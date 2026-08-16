@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { PRODUCTS } from "@/lib/content";
+import { BLUR_DATA } from "@/lib/blur-data";
 import { Reveal } from "@/components/reveal";
 
 export function ProductsSection() {
@@ -30,6 +31,8 @@ export function ProductsSection() {
                     fill
                     sizes="(max-width: 900px) 50vw, 20vw"
                     style={{ objectFit: "cover" }}
+                    placeholder="blur"
+                    blurDataURL={BLUR_DATA[product.photoSrc]}
                   />
                 </div>
                 <div className="body">

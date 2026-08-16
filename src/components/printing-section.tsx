@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { PRINTING_METHODS } from "@/lib/content";
+import { BLUR_DATA } from "@/lib/blur-data";
 import { Reveal } from "@/components/reveal";
 
 export function PrintingSection() {
@@ -34,6 +35,8 @@ export function PrintingSection() {
                   fill
                   sizes="(max-width: 900px) 50vw, 25vw"
                   style={{ objectFit: "cover" }}
+                  placeholder="blur"
+                  blurDataURL={BLUR_DATA[method.photoSrc]}
                 />
               </div>
               <div className="index">0{i + 1}</div>

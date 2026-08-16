@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { BLUR_DATA } from "@/lib/blur-data";
+import { HeroGlow } from "@/components/hero-glow";
 
 export function Hero() {
   return (
@@ -10,9 +12,12 @@ export function Hero() {
           fill
           sizes="100vw"
           style={{ objectFit: "cover" }}
+          placeholder="blur"
+          blurDataURL={BLUR_DATA["/images/hero.jpg"]}
           priority
         />
-        <div className="hero-scrim" />
+        <div className="hero-scrim grain" />
+        <HeroGlow />
       </div>
 
       <div className="hero-content">
@@ -22,14 +27,11 @@ export function Hero() {
         <h1 className="hero-title">
           Your spec. Our network. <em>Shipped.</em>
         </h1>
-        <p className="hero-lede">
+        <p className="hero-lede hero-lede--last">
           You place one order. We source it, print it, check it and deliver
           it to your door — direct relationships with vetted manufacturers
           across cotton and sports T-shirts, jeans, pants and shirts. No
           minimum order quantity.
-        </p>
-        <p className="hero-gu">
-          તમે ઓર્ડર આપો — સોર્સિંગથી ડિલિવરી સુધીનું બધું અમે સંભાળીએ છીએ.
         </p>
         <div className="hero-actions">
           <a href="#enquiry" className="btn btn-primary">

@@ -1,21 +1,10 @@
 import type { Metadata } from "next";
-import { Archivo, IBM_Plex_Mono, Noto_Sans_Gujarati } from "next/font/google";
+import { Archivo } from "next/font/google";
 import "./globals.css";
 
 const archivo = Archivo({
   variable: "--font-archivo",
   subsets: ["latin"],
-});
-
-const ibmPlexMono = IBM_Plex_Mono({
-  variable: "--font-ibm-plex-mono",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-});
-
-const notoSansGujarati = Noto_Sans_Gujarati({
-  variable: "--font-noto-gujarati",
-  subsets: ["gujarati"],
 });
 
 const title = "Moksha Trading — Garment Sourcing, Printing & Export";
@@ -48,10 +37,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={`${archivo.variable} ${ibmPlexMono.variable} ${notoSansGujarati.variable}`}
-    >
+    <html lang="en" className={archivo.variable}>
       <body>{children}</body>
     </html>
   );

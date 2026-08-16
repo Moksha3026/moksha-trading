@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { Counter } from "@/components/counter";
+import { BLUR_DATA } from "@/lib/blur-data";
 import { Reveal } from "@/components/reveal";
 
 export function AboutSection() {
@@ -14,6 +16,8 @@ export function AboutSection() {
                 fill
                 sizes="(max-width: 900px) 100vw, 50vw"
                 style={{ objectFit: "cover" }}
+                placeholder="blur"
+                blurDataURL={BLUR_DATA["/images/about.jpg"]}
               />
             </div>
           </Reveal>
@@ -40,14 +44,11 @@ export function AboutSection() {
                 handled on your behalf — you order, we deliver. Sample or
                 bulk, there is no minimum order quantity.
               </p>
-              <p className="about-gu">
-                અમદાવાદ, ગુજરાત સ્થિત ટ્રેડિંગ પેઢી — ઉત્પાદકો સાથે સીધો
-                સંપર્ક, ઓર્ડરથી ડિલિવરી સુધી બધું અમે સંભાળીએ.
-              </p>
-
               <div className="about-stats">
                 <div>
-                  <div className="num">5,000+</div>
+                  <div className="num">
+                    <Counter value="5,000+" />
+                  </div>
                   <div className="label">T-shirts delivered internationally</div>
                 </div>
                 <div>
