@@ -33,7 +33,12 @@ export const metadata: Metadata = {
     description,
   },
   verification: {
-    google: "Bo2VFjSt5pza2lrZeMLcRduov4I6c4TkEJNcbcECZw8",
+    google: [
+      // sanjaysinh0044@gmail.com — moksha-trading.vercel.app property
+      "Bo2VFjSt5pza2lrZeMLcRduov4I6c4TkEJNcbcECZw8",
+      // mokshatrading30@gmail.com — www.mokshaexport.com property
+      "rGKFBApI4IIrKiMZu3OiCjIHhnQi1V6FW7THXkqsKuM",
+    ],
   },
 };
 
