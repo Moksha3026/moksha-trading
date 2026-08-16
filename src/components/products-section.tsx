@@ -11,7 +11,7 @@ export function ProductsSection() {
           <div className="section-head">
             <span className="kicker">Product range</span>
             <div className="section-title-row">
-              <h2 className="section-title">Your spec. Your label.</h2>
+              <h2 className="section-title">Your specification. Your label.</h2>
               <p className="section-note">
                 Cotton and sports T-shirts, jeans, pants and shirts — sample
                 or bulk, no minimum order quantity.

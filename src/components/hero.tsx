@@ -25,7 +25,7 @@ export function Hero() {
           Garment sourcing · printing · export — Ahmedabad, Gujarat, India
         </div>
         <h1 className="hero-title">
-          Your spec. Our network. <em>Shipped.</em>
+          Your specification. Our network. <em>Shipped.</em>
         </h1>
         <p className="hero-lede hero-lede--last">
           You place one order. We source it, print it, check it and deliver

@@ -77,7 +77,7 @@ export const PRODUCTS = [
 export const PROCESS_STEPS = [
   {
     label: "STEP 01",
-    title: "Share your spec",
+    title: "Share your specification",
     desc: "Garment, fabric, quantity, artwork and destination. One message is enough.",
   },
   {
@@ -123,7 +123,7 @@ export const FAQS = [
   },
   {
     q: "Can you produce under my own brand label?",
-    a: "Yes. Woven or printed labels, neck prints, hang tags and custom packaging can all be applied to your spec.",
+    a: "Yes. Woven or printed labels, neck prints, hang tags and custom packaging can all be applied to your specification.",
   },
   {
     q: "Do you ship internationally?",
@@ -131,7 +131,7 @@ export const FAQS = [
   },
   {
     q: "How do I start?",
-    a: "Send your spec through the enquiry form or email Mokshatrading30@gmail.com with garment, quantity, artwork and destination country.",
+    a: "Send your specification through the enquiry form or email Mokshatrading30@gmail.com with garment, quantity, artwork and destination country.",
   },
 ];
 

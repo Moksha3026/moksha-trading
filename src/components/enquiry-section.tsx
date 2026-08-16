@@ -57,7 +57,7 @@ export function EnquirySection() {
         <div className="enquiry-grid">
           <Reveal>
             <div className="enquiry-copy">
-              <span className="kicker">Send us your spec</span>
+              <span className="kicker">Send us your specification</span>
               <h2 className="section-title">Let&apos;s make it real.</h2>
               <p>
                 Garment, quantity, print method and delivery country —

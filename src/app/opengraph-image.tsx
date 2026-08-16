@@ -60,7 +60,7 @@ export default function OpengraphImage() {
               marginTop: 16,
             }}
           >
-            Your spec. Our network. Shipped.
+            Your specification. Our network. Shipped.
           </div>
         </div>
 
