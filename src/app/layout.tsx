@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Archivo } from "next/font/google";
-import { SITE_URL } from "@/lib/content";
+import { CONTACT, SITE_URL } from "@/lib/content";
 import "./globals.css";
 
 const archivo = Archivo({
@@ -42,12 +42,35 @@ export const metadata: Metadata = {
   },
 };
 
+// Ties the firm name to this domain for Google, since the two don't match.
+const organisationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Moksha Trading",
+  url: SITE_URL,
+  description,
+  email: CONTACT.email,
+  telephone: "+917990302150",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Ahmedabad",
+    addressRegion: "Gujarat",
+    addressCountry: "IN",
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={archivo.variable}>
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organisationSchema) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
