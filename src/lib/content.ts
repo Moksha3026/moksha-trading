@@ -57,10 +57,18 @@ export type Product = {
 
 export const PRODUCTS: Product[] = [
   {
-    photoSrc: "/images/product-cotton-tee.jpg",
-    photoAlt: "Plain white cotton T-shirt",
+    photoSrc: "/images/stock-tee-hanger.jpg",
+    photoAlt: "Plain black cotton T-shirt on a hanger",
     title: "Cotton T-shirts",
     meta: ["COMBED / BIO-WASH", "ROUND & POLO NECK"],
+    gallery: [
+      { src: "/images/stock-tee-hanger.jpg", alt: "Plain black cotton T-shirt on a hanger" },
+      { src: "/images/stock-tee-man.jpg", alt: "Man wearing a plain white cotton T-shirt" },
+      { src: "/images/stock-tee-woman.jpg", alt: "Woman wearing a plain white cotton T-shirt" },
+      { src: "/images/stock-tee-kid.jpg", alt: "Child wearing a plain white cotton T-shirt" },
+      { src: "/images/stock-tee-folded.jpg", alt: "Folded white and black cotton T-shirts" },
+      { src: "/images/stock-tee-flat.jpg", alt: "Plain white cotton T-shirt laid flat" },
+    ],
   },
   {
     photoSrc: "/images/own-sports-polo-flat.jpg",
@@ -100,22 +108,40 @@ export const PRODUCTS: Product[] = [
     ],
   },
   {
-    photoSrc: "/images/product-jeans.jpg",
-    photoAlt: "Close-up of blue denim jeans with buttons",
+    photoSrc: "/images/stock-jeans-stack.jpg",
+    photoAlt: "Folded blue denim jeans stacked",
     title: "Jeans",
     meta: ["DENIM", "CUSTOM WASHES"],
+    gallery: [
+      { src: "/images/stock-jeans-stack.jpg", alt: "Folded blue denim jeans stacked" },
+      { src: "/images/stock-jeans-folded.jpg", alt: "Stack of jeans in several indigo washes" },
+      { src: "/images/stock-jeans-detail.jpg", alt: "Denim stitching and pocket detail" },
+      { src: "/images/stock-jeans-worn.jpg", alt: "Jeans worn with a plain T-shirt" },
+    ],
   },
   {
-    photoSrc: "/images/product-pants.jpg",
-    photoAlt: "Close-up of beige woven twill fabric",
+    photoSrc: "/images/stock-trouser-worn.jpg",
+    photoAlt: "Tailored checked trousers worn with trainers",
     title: "Pants & trousers",
     meta: ["TWILL / CARGO", "JOGGERS"],
+    gallery: [
+      { src: "/images/stock-trouser-worn.jpg", alt: "Tailored checked trousers worn with trainers" },
+      { src: "/images/stock-trouser-cream.jpg", alt: "Cream wide-leg trousers worn with a jacket" },
+      { src: "/images/stock-trouser-full.jpg", alt: "Chinos worn with a linen overshirt" },
+      { src: "/images/stock-trouser-pocket.jpg", alt: "Side pocket and waistband detail on light trousers" },
+    ],
   },
   {
-    photoSrc: "/images/product-shirts.jpg",
-    photoAlt: "Close-up of a white dress shirt with buttons",
+    photoSrc: "/images/stock-shirt-hanger.jpg",
+    photoAlt: "White button-down shirt on a hanger",
     title: "Shirts & uniforms",
     meta: ["CORPORATE", "EVENT MERCH"],
+    gallery: [
+      { src: "/images/stock-shirt-hanger.jpg", alt: "White button-down shirt on a hanger" },
+      { src: "/images/stock-shirt-rail.jpg", alt: "Light blue shirt hanging on a rail" },
+      { src: "/images/stock-shirt-worn.jpg", alt: "Crisp white shirt worn, sleeves extended" },
+      { src: "/images/stock-shirt-folded.jpg", alt: "Folded shirts stacked by colour" },
+    ],
   },
 ];
 
