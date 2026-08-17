@@ -1,19 +1,11 @@
 import type { Metadata } from "next";
-import { Archivo, Fraunces } from "next/font/google";
+import { Archivo } from "next/font/google";
 import { CONTACT, SITE_URL } from "@/lib/content";
 import "./globals.css";
 
 const archivo = Archivo({
   variable: "--font-archivo",
   subsets: ["latin"],
-});
-
-// Display face for headlines — the contrast against Archivo is what gives
-// the page a voice rather than a single flat weight everywhere.
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
-  subsets: ["latin"],
-  axes: ["SOFT", "WONK", "opsz"],
 });
 
 const title = "Moksha Trading — Garment Sourcing, Printing & Export";
@@ -71,29 +63,8 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${archivo.variable} ${fraunces.variable}`}>
+    <html lang="en" className={archivo.variable}>
       <body>
-        {/* Maps every photo's shadows to indigo and highlights to brass, so
-            the stock imagery reads as one owned set rather than four sources. */}
-        <svg aria-hidden="true" focusable="false" className="filter-defs">
-          <filter id="duotone" colorInterpolationFilters="sRGB">
-            <feColorMatrix
-              type="matrix"
-              values="0.34 0.5 0.16 0 0
-                      0.34 0.5 0.16 0 0
-                      0.34 0.5 0.16 0 0
-                      0    0   0    1 0"
-            />
-            {/* Shadows to indigo, highlights to a warm off-white rather than
-                full brass — a heavier grade buries the garment detail buyers
-                are here to inspect. */}
-            <feComponentTransfer>
-              <feFuncR type="table" tableValues="0.08 0.96" />
-              <feFuncG type="table" tableValues="0.10 0.89" />
-              <feFuncB type="table" tableValues="0.21 0.75" />
-            </feComponentTransfer>
-          </filter>
-        </svg>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organisationSchema) }}

@@ -3,7 +3,7 @@ import { Reveal } from "@/components/reveal";
 
 export function ProcessSection() {
   return (
-    <section id="process" className="section section-dark grain">
+    <section id="process" className="section">
       <div className="container">
         <Reveal>
           <div className="section-head">
