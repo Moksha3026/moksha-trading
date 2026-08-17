@@ -43,7 +43,19 @@ export const PRINTING_METHODS = [
   },
 ];
 
-export const PRODUCTS = [
+export type ProductPhoto = { src: string; alt: string };
+
+export type Product = {
+  photoSrc: string;
+  photoAlt: string;
+  title: string;
+  meta: string[];
+  /** Extra shots shown in the lightbox. Omitted while a category still
+      runs on a single stock image. */
+  gallery?: ProductPhoto[];
+};
+
+export const PRODUCTS: Product[] = [
   {
     photoSrc: "/images/product-cotton-tee.jpg",
     photoAlt: "Plain white cotton T-shirt",
@@ -51,10 +63,41 @@ export const PRODUCTS = [
     meta: ["COMBED / BIO-WASH", "ROUND & POLO NECK"],
   },
   {
-    photoSrc: "/images/product-sports-tee.jpg",
-    photoAlt: "Close-up of white performance mesh fabric",
+    photoSrc: "/images/own-sports-polo-flat.jpg",
+    photoAlt: "Navy sublimated sports polo laid flat, showing the printed yoke and knitted collar",
     title: "Sports T-shirts",
     meta: ["DRY-FIT POLYESTER", "TEAM KITS"],
+    // Photographed from our own production runs.
+    gallery: [
+      {
+        src: "/images/own-sports-polo-flat.jpg",
+        alt: "Navy sublimated sports polo laid flat, showing the printed yoke and knitted collar",
+      },
+      {
+        src: "/images/own-sports-polo-back.jpg",
+        alt: "Back of a navy sports polo with cut-and-sew side panels",
+      },
+      {
+        src: "/images/own-sports-sublimation.jpg",
+        alt: "All-over sublimation print across the body of a blue sports polo",
+      },
+      {
+        src: "/images/own-detail-shoulder.jpg",
+        alt: "Shoulder seam where the printed yoke meets the sleeve",
+      },
+      {
+        src: "/images/own-detail-panel.jpg",
+        alt: "Cut-and-sew side panel in white and green against navy",
+      },
+      {
+        src: "/images/own-detail-gradient.jpg",
+        alt: "Sublimated line gradient running from orange through teal",
+      },
+      {
+        src: "/images/own-detail-collar.jpg",
+        alt: "Knitted contrast collar and button placket stitching",
+      },
+    ],
   },
   {
     photoSrc: "/images/product-jeans.jpg",

@@ -1,9 +1,16 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 import { PRODUCTS } from "@/lib/content";
 import { BLUR_DATA } from "@/lib/blur-data";
 import { Reveal } from "@/components/reveal";
+import { ProductLightbox } from "@/components/product-lightbox";
 
 export function ProductsSection() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const active = openIndex === null ? null : PRODUCTS[openIndex];
+
   return (
     <section id="products" className="section section-alt">
       <div className="container">
@@ -21,17 +28,18 @@ export function ProductsSection() {
         </Reveal>
 
         <div className="products-grid">
-          {PRODUCTS.map((product, i) => (
-            <Reveal key={product.title} delay={i * 70}>
-              <div className="product-card">
+          {PRODUCTS.map((product, i) => {
+            const count = product.gallery?.length ?? 0;
+            const card = (
+              <>
                 <div className="photo-frame">
                   <Image
                     src={product.photoSrc}
                     alt={product.photoAlt}
                     fill
-                    sizes="(max-width: 900px) 50vw, 20vw"
+                    sizes="(max-width: 900px) 50vw, 33vw"
                     style={{ objectFit: "cover" }}
-                    placeholder="blur"
+                    placeholder={BLUR_DATA[product.photoSrc] ? "blur" : "empty"}
                     blurDataURL={BLUR_DATA[product.photoSrc]}
                   />
                 </div>
@@ -39,11 +47,38 @@ export function ProductsSection() {
                   <div className="title">{product.title}</div>
                   <div className="meta">{product.meta.join(" · ")}</div>
                 </div>
-              </div>
-            </Reveal>
-          ))}
+                {count > 0 && <span className="photo-badge">{count} photos</span>}
+              </>
+            );
+
+            return (
+              <Reveal key={product.title} delay={i * 70}>
+                {count > 0 ? (
+                  <button
+                    type="button"
+                    className="product-card product-card--clickable"
+                    onClick={() => setOpenIndex(i)}
+                    aria-label={`${product.title} — view ${count} photos`}
+                  >
+                    {card}
+                  </button>
+                ) : (
+                  <div className="product-card">{card}</div>
+                )}
+              </Reveal>
+            );
+          })}
         </div>
       </div>
+
+      {active?.gallery && (
+        <ProductLightbox
+          title={active.title}
+          photos={active.gallery}
+          startIndex={0}
+          onClose={() => setOpenIndex(null)}
+        />
+      )}
     </section>
   );
 }
