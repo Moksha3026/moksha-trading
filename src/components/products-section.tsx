@@ -5,7 +5,10 @@ import { useState } from "react";
 import { PRODUCTS } from "@/lib/content";
 import { BLUR_DATA } from "@/lib/blur-data";
 import { Reveal } from "@/components/reveal";
+import { ProductCarousel } from "@/components/product-carousel";
 import { ProductLightbox } from "@/components/product-lightbox";
+
+const SIZES = "(max-width: 900px) 50vw, 33vw";
 
 export function ProductsSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -29,42 +32,44 @@ export function ProductsSection() {
 
         <div className="products-grid">
           {PRODUCTS.map((product, i) => {
-            const count = product.gallery?.length ?? 0;
-            const card = (
-              <>
-                <div className="photo-frame">
-                  <Image
-                    src={product.photoSrc}
-                    alt={product.photoAlt}
-                    fill
-                    sizes="(max-width: 900px) 50vw, 33vw"
-                    style={{ objectFit: "cover" }}
-                    placeholder={BLUR_DATA[product.photoSrc] ? "blur" : "empty"}
-                    blurDataURL={BLUR_DATA[product.photoSrc]}
-                  />
-                </div>
-                <div className="body">
-                  <div className="title">{product.title}</div>
-                  <div className="meta">{product.meta.join(" · ")}</div>
-                </div>
-                {count > 0 && <span className="photo-badge">{count} photos</span>}
-              </>
-            );
+            const photos = product.gallery ?? [];
+            const count = photos.length;
 
             return (
               <Reveal key={product.title} delay={i * 70}>
-                {count > 0 ? (
-                  <button
-                    type="button"
-                    className="product-card product-card--clickable"
-                    onClick={() => setOpenIndex(i)}
-                    aria-label={`${product.title} — view ${count} photos`}
-                  >
-                    {card}
-                  </button>
-                ) : (
-                  <div className="product-card">{card}</div>
-                )}
+                <div className="product-card">
+                  <div className="photo-frame">
+                    {count > 1 ? (
+                      <ProductCarousel photos={photos} sizes={SIZES} />
+                    ) : (
+                      <Image
+                        src={product.photoSrc}
+                        alt={product.photoAlt}
+                        fill
+                        sizes={SIZES}
+                        style={{ objectFit: "cover" }}
+                        placeholder={BLUR_DATA[product.photoSrc] ? "blur" : "empty"}
+                        blurDataURL={BLUR_DATA[product.photoSrc]}
+                      />
+                    )}
+                  </div>
+
+                  <div className="body">
+                    <div className="title">{product.title}</div>
+                    <div className="meta">{product.meta.join(" · ")}</div>
+                  </div>
+
+                  {count > 1 && (
+                    <button
+                      type="button"
+                      className="photo-badge"
+                      onClick={() => setOpenIndex(i)}
+                      aria-label={`${product.title} — view all ${count} photos`}
+                    >
+                      {count} photos
+                    </button>
+                  )}
+                </div>
               </Reveal>
             );
           })}

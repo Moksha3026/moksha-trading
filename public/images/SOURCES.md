@@ -53,8 +53,18 @@ several club and national-team jerseys.
 
 Replace these with our own photography as it becomes available.
 
+## Currently unreferenced
+
+Kept in place so they can be dropped back into a gallery without being
+re-sourced, but not shown on the site today:
+
+- `own-detail-panel.jpg`
+- `stock-tee-flat.jpg`
+- `stock-trouser-worn.jpg`, `stock-trouser-full.jpg`
+- `stock-shirt-rail.jpg`, `stock-shirt-worn.jpg`, `stock-shirt-folded.jpg`
+  — Shirts & uniforms runs on a single image by choice
+
 ## Superseded
 
-`product-*.jpg` and `printing-*.jpg` are the earlier Pexels set. The
-`product-*` files are no longer referenced and can be deleted once the
-gallery has been signed off.
+`product-*.jpg` is the earlier Pexels set, no longer referenced anywhere.
+`printing-*.jpg` is still in use by the printing section.

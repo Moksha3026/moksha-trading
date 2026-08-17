@@ -67,7 +67,6 @@ export const PRODUCTS: Product[] = [
       { src: "/images/stock-tee-woman.jpg", alt: "Woman wearing a plain white cotton T-shirt" },
       { src: "/images/stock-tee-kid.jpg", alt: "Child wearing a plain white cotton T-shirt" },
       { src: "/images/stock-tee-folded.jpg", alt: "Folded white and black cotton T-shirts" },
-      { src: "/images/stock-tee-flat.jpg", alt: "Plain white cotton T-shirt laid flat" },
     ],
   },
   {
@@ -94,10 +93,6 @@ export const PRODUCTS: Product[] = [
         alt: "Shoulder seam where the printed yoke meets the sleeve",
       },
       {
-        src: "/images/own-detail-panel.jpg",
-        alt: "Cut-and-sew side panel in white and green against navy",
-      },
-      {
         src: "/images/own-detail-gradient.jpg",
         alt: "Sublimated line gradient running from orange through teal",
       },
@@ -120,14 +115,12 @@ export const PRODUCTS: Product[] = [
     ],
   },
   {
-    photoSrc: "/images/stock-trouser-worn.jpg",
-    photoAlt: "Tailored checked trousers worn with trainers",
+    photoSrc: "/images/stock-trouser-cream.jpg",
+    photoAlt: "Cream wide-leg trousers worn with a jacket",
     title: "Pants & trousers",
     meta: ["TWILL / CARGO", "JOGGERS"],
     gallery: [
-      { src: "/images/stock-trouser-worn.jpg", alt: "Tailored checked trousers worn with trainers" },
       { src: "/images/stock-trouser-cream.jpg", alt: "Cream wide-leg trousers worn with a jacket" },
-      { src: "/images/stock-trouser-full.jpg", alt: "Chinos worn with a linen overshirt" },
       { src: "/images/stock-trouser-pocket.jpg", alt: "Side pocket and waistband detail on light trousers" },
     ],
   },
@@ -136,12 +129,6 @@ export const PRODUCTS: Product[] = [
     photoAlt: "White button-down shirt on a hanger",
     title: "Shirts & uniforms",
     meta: ["CORPORATE", "EVENT MERCH"],
-    gallery: [
-      { src: "/images/stock-shirt-hanger.jpg", alt: "White button-down shirt on a hanger" },
-      { src: "/images/stock-shirt-rail.jpg", alt: "Light blue shirt hanging on a rail" },
-      { src: "/images/stock-shirt-worn.jpg", alt: "Crisp white shirt worn, sleeves extended" },
-      { src: "/images/stock-shirt-folded.jpg", alt: "Folded shirts stacked by colour" },
-    ],
   },
 ];
 
