@@ -210,18 +210,22 @@ img {
   }
 }
 
-.header-cta {
+/* Scoped to .site-nav so it outranks `.site-nav a`, which would otherwise
+   repaint the label with --header-fg — dark on dark once the header is
+   scrolled — and drag in its 0.8 opacity. */
+.site-nav a.header-cta {
   font: 600 13px/1 var(--font-sans);
   letter-spacing: 0.01em;
   padding: 12px 22px;
   border-radius: 999px;
   background: var(--ink);
   color: #fff;
+  opacity: 1;
   white-space: nowrap;
   transition: transform 0.25s ease, background 0.25s ease;
 }
 
-.header-cta:hover {
+.site-nav a.header-cta:hover {
   color: #fff;
   background: var(--accent-solid);
   transform: translateY(-1px);
