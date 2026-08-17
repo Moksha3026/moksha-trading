@@ -1821,3 +1821,57 @@ button.photo-badge:focus-visible {
     font-size: 18px;
   }
 }
+
+/* ---------- hero: fit short laptop screens, split the composition ---------- */
+
+/* Sized against height as well as width. On a wide-but-short laptop the
+   width-only clamp hit its 148px ceiling and swallowed the viewport. */
+.hero-title {
+  font-size: clamp(46px, min(6.4vw, 10.5vh), 104px);
+  letter-spacing: -0.035em;
+}
+
+/* Never let the copy slide under the fixed header when the viewport is short. */
+.hero-content {
+  padding-top: 104px;
+}
+
+@media (min-width: 1000px) {
+  /* Give the garment the right-hand side and keep the left clear for type. */
+  .hero-media {
+    left: auto;
+    right: 0;
+    width: 58%;
+  }
+
+  /* Fade the cut edge into the canvas so it reads as one composition
+     rather than a pasted-in panel. */
+  .hero-scrim {
+    background:
+      linear-gradient(
+        to right,
+        var(--canvas) 0%,
+        rgba(8, 9, 13, 0.82) 22%,
+        rgba(8, 9, 13, 0.18) 58%,
+        rgba(8, 9, 13, 0.42) 100%
+      ),
+      linear-gradient(
+        to top,
+        rgba(8, 9, 13, 0.88) 0%,
+        rgba(8, 9, 13, 0.3) 46%,
+        rgba(8, 9, 13, 0.5) 100%
+      );
+  }
+
+  .hero-content {
+    max-width: 56%;
+  }
+
+  .hero-title {
+    max-width: 13ch;
+  }
+
+  .hero-lede {
+    max-width: 42ch;
+  }
+}
