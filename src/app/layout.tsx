@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
-import { Archivo } from "next/font/google";
+import { Archivo, Space_Grotesk } from "next/font/google";
 import { CONTACT, SITE_URL } from "@/lib/content";
 import "./globals.css";
 
 const archivo = Archivo({
   variable: "--font-archivo",
+  subsets: ["latin"],
+});
+
+// Geometric grotesque for headlines and UI labels.
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-grotesk",
   subsets: ["latin"],
 });
 
@@ -63,8 +69,14 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={archivo.variable}>
+    <html lang="en" className={`${archivo.variable} ${spaceGrotesk.variable}`}>
       <body>
+        {/* Ambient colour behind the whole page — the warm/cool pair is what
+            keeps a near-black canvas from reading as flat grey. */}
+        <div className="glow-field" aria-hidden="true">
+          <span className="glow-orb glow-orb--warm" />
+          <span className="glow-orb glow-orb--cool" />
+        </div>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organisationSchema) }}
