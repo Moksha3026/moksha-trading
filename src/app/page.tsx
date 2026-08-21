@@ -1,4 +1,5 @@
 import { AboutSection } from "@/components/about-section";
+import { CapabilityMarquee } from "@/components/capability-marquee";
 import { CredentialStrip } from "@/components/credential-strip";
 import { EnquirySection } from "@/components/enquiry-section";
 import { ExportsFaqSection } from "@/components/exports-faq-section";
@@ -17,6 +18,7 @@ export default function Home() {
       <Hero />
       <CredentialStrip />
       <PrintingSection />
+      <CapabilityMarquee />
       <ProductsSection />
       <ProcessSection />
       <AboutSection />

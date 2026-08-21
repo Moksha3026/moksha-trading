@@ -216,3 +216,30 @@ export const CONTACT = {
   phoneDisplay: "+91 79903 02150",
   whatsappHref: "https://wa.me/917990302150",
 };
+
+/* Ribbon of what we actually make and how we print it. Two rows so they can
+   travel in opposite directions; every entry restates a capability already
+   stated elsewhere on the page. */
+export const CAPABILITY_ROWS: string[][] = [
+  [
+    "Cotton T-shirts",
+    "Sports polos",
+    "Team kits",
+    "Jeans",
+    "Pants & trousers",
+    "Shirts & uniforms",
+    "Event merch",
+    "Corporate wear",
+  ],
+  [
+    "Screen print",
+    "DTF",
+    "Digital / DTG",
+    "HD print",
+    "Sublimation",
+    "No minimum order",
+    "QC before dispatch",
+    "IEC export licensed",
+    "Air & sea freight",
+  ],
+];

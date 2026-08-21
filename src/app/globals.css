@@ -1875,3 +1875,105 @@ button.photo-badge:focus-visible {
     max-width: 42ch;
   }
 }
+
+/* ---------- capability marquee ---------- */
+
+.marquee-band {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 40px 0;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  background: linear-gradient(
+    180deg,
+    rgba(244, 245, 248, 0.04) 0%,
+    rgba(244, 245, 248, 0) 100%
+  );
+  overflow: hidden;
+}
+
+.marquee {
+  overflow: hidden;
+  /* Feather both ends so items enter and leave instead of being chopped. */
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 12%,
+    #000 88%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 12%,
+    #000 88%,
+    transparent 100%
+  );
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 46s linear infinite;
+}
+
+/* The second row travels the other way, which reads as motion rather than
+   as one long belt. */
+.marquee-track--reverse {
+  animation-direction: reverse;
+  animation-duration: 38s;
+}
+
+.marquee-band:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Each list is one full copy of the row; translating by half the track
+   returns it to its start position, so the loop is seamless. */
+@keyframes marquee-scroll {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+
+.marquee-list {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  padding: 0 30px;
+  font: 600 clamp(19px, 2.4vw, 34px) / 1 var(--font-display);
+  letter-spacing: -0.02em;
+  color: var(--muted);
+  transition: color 0.3s ease;
+}
+
+.marquee-item::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-left: 30px;
+  opacity: 0.75;
+}
+
+.marquee-band:hover .marquee-item {
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
