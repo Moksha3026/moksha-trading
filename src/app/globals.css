@@ -1977,3 +1977,14 @@ button.photo-badge:focus-visible {
     animation: none;
   }
 }
+
+/* The ribbon is itself the divider between these two sections, so their
+   facing edges don't need full section padding as well — without this the
+   164px band floats in 216px of surrounding air. */
+#printing {
+  padding-bottom: clamp(40px, 5vh, 56px);
+}
+
+#products {
+  padding-top: clamp(40px, 5vh, 56px);
+}
